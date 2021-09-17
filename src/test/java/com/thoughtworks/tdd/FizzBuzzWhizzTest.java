@@ -51,4 +51,16 @@ public class FizzBuzzWhizzTest {
         assertThat(fizzBuzzWhizz.fizzBuzz(21), is("FizzWhizz"));
         assertThat(fizzBuzzWhizz.fizzBuzz(42), is("FizzWhizz"));
     }
+
+    @Test
+    void should_return_fizz_when_input_Multiples_of_5_7() {
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        assertThat(fizzBuzzWhizz.fizzBuzz(35), is("BuzzWhizz"));
+        assertThat(fizzBuzzWhizz.fizzBuzz(70), is("BuzzWhizz"));
+    }
+    @Test
+    void should_return_fizz_when_input_Multiples_of_3_5_7() {
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        assertThat(fizzBuzzWhizz.fizzBuzz(105), is("FizzBuzzWhizz"));
+    }
 }
