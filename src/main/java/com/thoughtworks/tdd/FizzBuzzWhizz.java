@@ -2,31 +2,35 @@ package com.thoughtworks.tdd;
 
 public class FizzBuzzWhizz {
     public String fizzBuzz(Integer input) {
-        if (isDiv(input,105)) {
-            return "FizzBuzzWhizz";
-        }
-        if (isDiv(input,35)) {
-            return "BuzzWhizz";
-        }
-        if (isDiv(input,21)) {
-            return "FizzWhizz";
-        }
-        if (isDiv(input,15)) {
-            return "FizzBuzz";
-        }
-        if (isDiv(input,7)) {
-            return "Whizz";
-        }
-        if (isDiv(input,5)) {
-            return "Buzz";
-        }
-        if (isDiv(input,3)) {
-            return "Fizz";
-        }
-        return input.toString();
+        String fizz = fizzResult(input);
+        String buzz = buzzResult(input);
+        String whizz = whizzResult(input);
+        String result = fizz + buzz + whizz;
+        return result.equals("") ? input.toString() : result;
     }
 
-    private boolean isDiv(int input,int div){
+    private String whizzResult(int input) {
+        if (isDiv(input, 7)) {
+            return "Whizz";
+        }
+        return "";
+    }
+
+    private String buzzResult(int input) {
+        if (isDiv(input, 5)) {
+            return "Buzz";
+        }
+        return "";
+    }
+
+    private String fizzResult(int input) {
+        if (isDiv(input, 3)) {
+            return "Fizz";
+        }
+        return "";
+    }
+
+    private boolean isDiv(int input, int div) {
         return input % div == 0;
     }
 }
