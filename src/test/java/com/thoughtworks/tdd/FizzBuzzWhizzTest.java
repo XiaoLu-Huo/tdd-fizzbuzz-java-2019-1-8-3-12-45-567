@@ -44,4 +44,11 @@ public class FizzBuzzWhizzTest {
         assertThat(fizzBuzzWhizz.fizzBuzz(7), is("Whizz"));
         assertThat(fizzBuzzWhizz.fizzBuzz(14), is("Whizz"));
     }
+
+    @Test
+    void should_return_fizz_when_input_Multiples_of_3_7() {
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        assertThat(fizzBuzzWhizz.fizzBuzz(21), is("FizzWhizz"));
+        assertThat(fizzBuzzWhizz.fizzBuzz(42), is("FizzWhizz"));
+    }
 }
