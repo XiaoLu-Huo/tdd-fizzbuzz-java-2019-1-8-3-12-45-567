@@ -1,30 +1,20 @@
 package com.thoughtworks.tdd;
 
-public class CreateRule{
+public class CreateRule implements Executable{
+    private int input;
+    private String output;
 
-    public String whizzResult(int input) {
-        if (isDiv(input, 7)) {
-            return "Whizz";
-        }
-        return "";
+    public CreateRule(int input, String output) {
+        this.input = input;
+        this.output = output;
     }
 
-    public String buzzResult(int input) {
-        if (isDiv(input, 5)) {
-            return "Buzz";
-        }
-        return "";
+    public static Executable create(int in, String out){
+        return new CreateRule(in,out);
     }
 
-    public String fizzResult(int input) {
-        if (isDiv(input, 3)) {
-            return "Fizz";
-        }
-        return "";
+    @Override
+    public String exec(int num) {
+        return num % input == 0 ? output : "";
     }
-
-    private boolean isDiv(int input, int div) {
-        return input % div == 0;
-    }
-
 }
