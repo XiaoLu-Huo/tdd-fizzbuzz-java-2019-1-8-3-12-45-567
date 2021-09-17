@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class FizzBuzzWhizzTest {
 
@@ -33,5 +31,17 @@ public class FizzBuzzWhizzTest {
         assertThat(fizzBuzzWhizz.fizzBuzz(10), is("Buzz"));
     }
 
+    @Test
+    void should_return_fizz_when_input_Multiples_of_3_5() {
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        assertThat(fizzBuzzWhizz.fizzBuzz(15), is("FizzBuzz"));
+        assertThat(fizzBuzzWhizz.fizzBuzz(30), is("FizzBuzz"));
+    }
 
+    @Test
+    void should_return_fizz_when_input_Multiples_of_7() {
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        assertThat(fizzBuzzWhizz.fizzBuzz(7), is("Whizz"));
+        assertThat(fizzBuzzWhizz.fizzBuzz(14), is("Whizz"));
+    }
 }
