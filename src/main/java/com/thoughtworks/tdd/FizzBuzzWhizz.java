@@ -6,34 +6,10 @@ public class FizzBuzzWhizz {
     }
 
     private String getResult(Integer input) {
-        String fizz = fizzResult(input);
-        String buzz = buzzResult(input);
-        String whizz = whizzResult(input);
+        CreateRule createRule = new CreateRule();
+        String fizz = createRule.fizzResult(input);
+        String buzz = createRule.buzzResult(input);
+        String whizz = createRule.whizzResult(input);
         return fizz + buzz + whizz;
-    }
-
-    private String whizzResult(int input) {
-        if (isDiv(input, 7)) {
-            return "Whizz";
-        }
-        return "";
-    }
-
-    private String buzzResult(int input) {
-        if (isDiv(input, 5)) {
-            return "Buzz";
-        }
-        return "";
-    }
-
-    private String fizzResult(int input) {
-        if (isDiv(input, 3)) {
-            return "Fizz";
-        }
-        return "";
-    }
-
-    private boolean isDiv(int input, int div) {
-        return input % div == 0;
     }
 }
